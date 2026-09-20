@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A calm, visual guide to Jev by TypeSafe AI — the model for structured decisions inside software." />
+    <title>Jev, explained — decisions for software</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="deep.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Jev explained home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>Jev<span class="brand-dot">.</span>explained</span>
+      </a>
+      <nav class="topnav" aria-label="Primary navigation">
+        <a href="#start">Start here</a>
+        <a href="#how">How it works</a>
+        <a href="#compare">Compare</a>
+        <a href="#limits">Limits</a>
+      </nav>
+      <a class="top-cta" href="https://typesafe.ai" target="_blank" rel="noreferrer">Visit TypeSafe <span>↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> A new primitive for software</div>
+          <h1>Let software<br /><em>make the call.</em></h1>
+          <p class="hero-lede">Jev is an AI model that reads a situation and answers questions whose possible answers you define in advance. Instead of writing prose, it returns choices, scores, and yes/no probabilities that software can use immediately.</p>
+          <div class="plain-chip"><strong>Plain English</strong><span>Show Jev what is happening. Ask a bounded question. Get a decision—not a paragraph.</span></div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#how">See how it works <span>↓</span></a>
+            <a class="text-link" href="#build">For engineers <span>→</span></a>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-item"><strong>choice</strong><span>route this ticket</span></div>
+            <div class="proof-item"><strong>score</strong><span>rate the severity</span></div>
+            <div class="proof-item"><strong>noul</strong><span>should we escalate?</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="An animated illustration of messy input becoming a typed decision">
+          <div class="orbital orbital-a"></div>
+          <div class="orbital orbital-b"></div>
+          <div class="hero-card input-card glass-card">
+            <div class="card-kicker"><span class="dot dot-coral"></span> INPUT · STATE</div>
+            <p>“The second invoice is wrong again. I’ve already contacted support.”</p>
+            <div class="card-footer"><span>support_message.txt</span><span class="tiny-chip">messy</span></div>
+          </div>
+          <div class="hero-arrow"><span>Jev</span><i></i></div>
+          <div class="hero-card output-card glass-card">
+            <div class="card-kicker"><span class="dot dot-lime"></span> OUTPUT · TYPED</div>
+            <div class="output-row"><span>topic</span><strong>billing</strong><b>choice</b></div>
+            <div class="output-row"><span>severity</span><strong>3.0</strong><b>score</b></div>
+            <div class="output-row"><span>escalate</span><strong>yes <small>0.92</small></strong><b>noul</b></div>
+            <div class="card-footer"><span>ready for your code</span><span class="status-live">● live</span></div>
+          </div>
+          <div class="float-label label-fast">70–500 ms <span>typical response</span></div>
+          <div class="float-label label-safe">type-safe by design <span>no prose to parse</span></div>
+        </div>
+      </section>
+
+      <div class="ticker"><div class="ticker-track"><span>NOT ANOTHER CHATBOT</span><i>✳</i><span>INTELLIGENCE INSIDE SOFTWARE</span><i>✳</i><span>DECISIONS, NOT MONOLOGUES</span><i>✳</i><span>NOT ANOTHER CHATBOT</span><i>✳</i></div></div>
+
+      <section class="intro section-shell" id="start">
+        <div class="section-label">01 / Start here</div>
+        <div class="definition-grid">
+          <div class="definition-title"><span>JEV / noun</span><h2>An AI decision engine for software.</h2></div>
+          <div class="definition-copy"><p>Jev is TypeSafe AI’s first “System One” model. Its job is narrow: read the current <strong>state</strong> of a program, judge a set of <strong>bounded questions</strong>, and return <strong>typed answers with uncertainty</strong>.</p><p>It does not compose an email, invent a plan, or hold a conversation. Your code still owns the workflow. Jev supplies the fuzzy judgment in the middle—where normal <code>if</code> statements are too brittle.</p></div>
+        </div>
+        <div class="concrete-example">
+          <div class="example-step"><span class="step-badge">1 · situation</span><p>A customer writes: “I cancelled last week, but you charged me again.”</p></div>
+          <div class="example-arrow">→</div>
+          <div class="example-step"><span class="step-badge">2 · Jev judges</span><p><b>Topic:</b> billing · <b>Severity:</b> high · <b>Escalate:</b> yes</p></div>
+          <div class="example-arrow">→</div>
+          <div class="example-step"><span class="step-badge">3 · code acts</span><p>Route to billing, pause the bot, and open a human-review task.</p></div>
+        </div>
+        <div class="primitive-heading"><span>The three answer types</span><p>These are the building blocks. Probability and confidence describe the answer; they are not a fourth type.</p></div>
+        <div class="primitive-grid">
+          <article><span class="primitive-symbol">Y/N</span><div><h3>Noul</h3><p>A yes-or-no judgment returned as a probability.</p><code>escalate? → yes · 0.92</code></div></article>
+          <article><span class="primitive-symbol">1/N</span><div><h3>Choice</h3><p>One option selected from a list you define.</p><code>topic → billing</code></div></article>
+          <article><span class="primitive-symbol">↕</span><div><h3>Score</h3><p>A level on a scale, with a distribution and confidence.</p><code>severity → 3 / 3</code></div></article>
+        </div>
+        <div class="quote-card"><span class="quote-mark">“</span><p>Think of Jev as a function call with judgment.</p><span class="quote-note">unstructured state in → typed probabilistic decisions out</span></div>
+      </section>
+
+      <section class="compare section-shell" id="compare">
+        <div class="section-label">02 / What is it different from?</div>
+        <div class="compare-heading"><h2>Four tools.<br /><em>Four different jobs.</em></h2><p>Jev is not “a better chatbot.” It sits between deterministic code and open-ended generative AI.</p></div>
+        <div class="comparison-scroll">
+          <div class="comparison-matrix">
+            <div class="matrix-cell matrix-corner">Approach</div><div class="matrix-cell matrix-head">Rules</div><div class="matrix-cell matrix-head">Classifier</div><div class="matrix-cell matrix-head">Chat LLM</div><div class="matrix-cell matrix-head matrix-jev">Jev</div>
+            <div class="matrix-cell matrix-label">You give it</div><div class="matrix-cell">Exact conditions</div><div class="matrix-cell">Training examples</div><div class="matrix-cell">A prompt</div><div class="matrix-cell matrix-jev">State + typed questions</div>
+            <div class="matrix-cell matrix-label">It gives back</div><div class="matrix-cell">True / false</div><div class="matrix-cell">A fixed label</div><div class="matrix-cell">Generated text</div><div class="matrix-cell matrix-jev">Choice, score, or Noul</div>
+            <div class="matrix-cell matrix-label">Best when</div><div class="matrix-cell">Logic is exact</div><div class="matrix-cell">Task is stable and narrow</div><div class="matrix-cell">You need language or reasoning</div><div class="matrix-cell matrix-jev">You need many bounded judgments</div>
+            <div class="matrix-cell matrix-label">Main weakness</div><div class="matrix-cell">Breaks on fuzzy input</div><div class="matrix-cell">Needs task-specific data</div><div class="matrix-cell">Slow, open-ended output</div><div class="matrix-cell matrix-jev">Cannot generate prose</div>
+            <div class="matrix-cell matrix-label">Uncertainty</div><div class="matrix-cell">None</div><div class="matrix-cell">Usually a class probability</div><div class="matrix-cell">Often inconsistent when asked</div><div class="matrix-cell matrix-jev">Built into every decision</div>
+          </div>
+        </div>
+        <div class="json-callout"><strong>Jev vs. JSON mode</strong><p>JSON mode asks a generative LLM to produce text that matches a schema. Jev’s output space is typed before inference and its answers are produced as decisions, not generated as a string and parsed afterward. Type-safe output prevents malformed shapes; it does not guarantee the judgment itself is correct.</p></div>
+      </section>
+
+      <section class="how section-shell" id="how">
+        <div class="section-label">03 / The complete loop</div>
+        <div class="how-heading"><h2>Jev decides.<br /><em>Your code remains in control.</em></h2><p>The surrounding workflow defines what data is visible, which questions are asked, and what happens at each confidence level.</p></div>
+        <div class="deep-flow">
+          <div class="deep-node"><span>01</span><i>event</i><h3>Something happens</h3><p>A ticket arrives, an agent proposes a tool call, or an invoice is uploaded.</p></div>
+          <b>→</b><div class="deep-node"><span>02</span><i>state</i><h3>Code gathers context</h3><p>Your system attaches the message, account facts, permissions, and history.</p></div>
+          <b>→</b><div class="deep-node active"><span>03</span><i>Jev</i><h3>Questions are judged</h3><p>Jev answers several independent Noul, Choice, and Score questions in parallel.</p></div>
+          <b>→</b><div class="deep-node"><span>04</span><i>policy</i><h3>Rules apply thresholds</h3><p>High confidence can act. Borderline confidence can request human review.</p></div>
+          <b>→</b><div class="deep-node"><span>05</span><i>action</i><h3>The workflow continues</h3><p>Route, queue, approve, block, page, or call another model to generate text.</p></div>
+        </div>
+        <div class="ownership-grid"><div><span>Keep in ordinary code</span><ul><li>Math, dates, permissions, and database lookups</li><li>Hard business rules and legal constraints</li><li>Side effects such as charging or deleting</li></ul></div><div><span>Ask Jev to judge</span><ul><li>Intent, relevance, risk, quality, and severity</li><li>Which option best matches messy context</li><li>Whether ambiguous evidence supports a condition</li></ul></div></div>
+      </section>
+
+      <section class="playground section-shell">
+        <div class="section-label">04 / Follow one request</div>
+        <div class="playground-grid">
+          <div class="playground-copy"><h2>One state.<br /><em>Three focused questions.</em></h2><p>The same customer message can answer several operational questions at once. The output does not perform the action—it gives policy code the evidence it needs.</p><div class="legend"><span><i class="legend-dot coral"></i>state</span><span><i class="legend-dot violet"></i>questions</span><span><i class="legend-dot lime"></i>decisions</span></div></div>
+          <div class="playground-card">
+            <div class="playground-bar"><span class="window-dots"><i></i><i></i><i></i></span><span>support-triage / conceptual trace</span><span class="trace-id">example</span></div>
+            <div class="playground-content">
+              <div class="trace-block trace-input"><div class="trace-label"><span>STATE</span><small>what Jev sees</small></div><p>“I cancelled last week, but you charged me again. This is the second time.”</p></div>
+              <div class="trace-block trace-question"><div class="trace-label"><span>QUESTIONS</span><small>allowed shapes</small></div><div class="question-list"><span>topic <b>choice</b></span><span>severity <b>score / 3</b></span><span>needs_human <b>noul</b></span></div></div>
+              <div class="trace-block trace-output"><div class="trace-label"><span>DECISIONS</span><small>values + uncertainty</small></div><div class="decision-list"><span><b>topic</b><strong>billing <small>0.94</small></strong></span><span><b>severity</b><strong>3 / 3 <small>0.87 conf.</small></strong></span><span><b>needs_human</b><strong class="yes">yes <small>0.88</small></strong></span></div></div>
+            </div>
+            <div class="playground-footer"><span><i class="status-dot"></i>now policy code chooses the next action</span><span>conceptual example</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="anatomy section-shell" id="build">
+        <div class="section-label">05 / For software engineers</div>
+        <div class="anatomy-heading"><h2>Anatomy of<br /><em>a Jev-shaped call.</em></h2><p>This is conceptual pseudocode, designed to show the contract rather than copy a specific SDK version.</p></div>
+        <div class="anatomy-grid">
+          <div class="code-window">
+            <div class="code-window-head"><span>decision.ts</span><span>conceptual</span></div>
+            <pre><code><span class="c-key">const</span> result = <span class="c-fn">await</span> jev.decide({
+  <span class="c-prop">state</span>: {
+    message: ticket.body,
+    plan: account.plan,
+    recentCharges: ledger.last90Days
+  },
+
+  <span class="c-prop">questions</span>: {
+    topic: <span class="c-fn">choice</span>([
+      <span class="c-str">"billing"</span>, <span class="c-str">"technical"</span>, <span class="c-str">"account"</span>
+    ]),
+    severity: <span class="c-fn">score</span>({ min: <span class="c-num">1</span>, max: <span class="c-num">3</span> }),
+    needsHuman: <span class="c-fn">noul</span>()
+  }
+});
+
+<span class="c-key">if</span> (result.needsHuman.probability &gt; <span class="c-num">0.85</span>) {
+  <span class="c-fn">routeToHuman</span>(ticket);
+}</code></pre>
+          </div>
+          <div class="anatomy-notes">
+            <article><span>1</span><div><h3>State is evidence, not a prompt persona</h3><p>Provide the facts needed for the judgment. More context is useful only when it is relevant and trustworthy.</p></div></article>
+            <article><span>2</span><div><h3>Questions define the legal output space</h3><p>The model cannot invent a fourth topic when the only choices are billing, technical, and account.</p></div></article>
+            <article><span>3</span><div><h3>Probabilities become policy inputs</h3><p>Your code chooses thresholds based on the cost of a false positive, false negative, and human review.</p></div></article>
+            <article><span>4</span><div><h3>Actions stay outside the model</h3><p>Jev recommends a typed decision. Your application authorizes and executes the real-world action.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="confidence section-shell">
+        <div class="section-label">06 / Confidence is part of the product</div>
+        <div class="confidence-grid">
+          <div class="confidence-copy"><h2>What should happen at <em>88%?</em></h2><p>A probability is not a promise. It is a signal your system can combine with the cost of being wrong. A well-calibrated model saying “88%” should be correct roughly 88 times across many similar cases—not necessarily on this one case.</p><div class="calibration-note"><strong>Calibration ≠ accuracy</strong><span>Accuracy asks “how often is it right?” Calibration asks “does its confidence honestly match how often it is right?”</span></div></div>
+          <div class="threshold-lab">
+            <div class="lab-head"><span>Decision confidence</span><strong>0.88</strong></div>
+            <div class="meter"><span style="width:88%"></span><i style="left:80%" id="thresholdMarker"></i></div>
+            <label for="thresholdRange">Automation threshold <output id="thresholdValue">0.80</output></label>
+            <input id="thresholdRange" type="range" min="50" max="99" value="80" aria-label="Automation threshold" />
+            <div class="lab-result auto" id="labResult"><span id="labIcon">✓</span><div><small>POLICY RESULT</small><strong id="labTitle">Act automatically</strong><p id="labText">0.88 clears the 0.80 threshold.</p></div></div>
+            <p class="lab-caption">Move the threshold. Higher thresholds reduce autonomous mistakes but send more cases to humans.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow section-shell">
+        <div class="section-label">07 / Why workflows matter</div>
+        <div class="workflow-heading"><h2>Don’t ask one giant question.<br /><em>Decompose the work.</em></h2><p>TypeSafe’s published evaluations frame reliable automation as a graph of narrow judgments plus deterministic rules.</p></div>
+        <div class="workflow-map">
+          <div class="workflow-start"><span>customer message + account state</span></div>
+          <div class="workflow-line"></div>
+          <div class="workflow-questions"><article><i>Noul</i><b>Is there an immediate safety risk?</b><span>yes 0.03</span></article><article><i>Choice</i><b>What is the primary intent?</b><span>billing 0.94</span></article><article><i>Score</i><b>How severe is the issue?</b><span>3 / 3</span></article><article><i>Noul</i><b>Does the account evidence support the claim?</b><span>yes 0.89</span></article></div>
+          <div class="workflow-line"></div>
+          <div class="workflow-policy"><span>ordinary code</span><p>If billing + evidence + severity 3, stop automated replies and open a priority human task.</p></div>
+          <div class="workflow-line"></div>
+          <div class="workflow-actions"><span>record decision</span><span>route to billing</span><span>ask human</span></div>
+        </div>
+        <div class="workflow-why"><article><b>Independent questions</b><p>One answer is less likely to bias another.</p></article><article><b>Inspectable policy</b><p>Teams can read and test the rules around the model.</p></article><article><b>Recoverable uncertainty</b><p>Low confidence becomes a review path instead of a silent guess.</p></article></div>
+      </section>
+
+      <section class="underhood section-shell">
+        <div class="section-label">08 / Under the hood, at a high level</div>
+        <div class="underhood-heading"><h2>Why TypeSafe calls it<br /><em>“System One.”</em></h2><p>The name comes from the idea of fast, intuitive judgment. Jev is optimized for many small decisions rather than long, sequential language generation.</p></div>
+        <div class="underhood-grid">
+          <article><span class="hood-index">A</span><h3>Different training target</h3><p>Chat models are commonly tuned to produce responses people prefer. TypeSafe says Jev uses <strong>Reinforcement Learning for Calibrated Decisions</strong>—RLCD—to train for useful decisions whose confidence reflects uncertainty.</p></article>
+          <article><span class="hood-index">B</span><h3>Parallel, not token-by-token</h3><p>An LLM generates a string one token after another. TypeSafe says Jev evaluates the declared questions and their possible outcomes in parallel, which is central to its latency and cost profile.</p></article>
+          <article><span class="hood-index">C</span><h3>Less freedom on purpose</h3><p>Jev gives up arbitrary string generation. That restriction is the feature: the model stays inside the answer space your program declared, making the result easier to compose and validate.</p></article>
+        </div>
+        <div class="published-numbers">
+          <div><span>Published response time</span><strong>70–500 ms</strong><small>TypeSafe’s service measurements</small></div>
+          <div><span>Published input price</span><strong>$0.042 / M tokens</strong><small>At launch; pricing can change</small></div>
+          <div><span>Output generation</span><strong>No string output</strong><small>Decisions are returned in parallel</small></div>
+          <div><span>Choice cardinality</span><strong>Up to 255</strong><small>TypeSafe’s published launch limit</small></div>
+        </div>
+        <div class="claims-note"><strong>About the big benchmark numbers</strong><p>TypeSafe reports up to roughly 194× faster and 445× cheaper on its published workflow evaluations. The company also says those gains are likely at the high end, and the evaluations use its own workflow harness and reference methodology. Treat them as vendor results—not universal guarantees—and run private evaluations on your own cases.</p></div>
+        <div class="name-story"><span>Why “Jev”?</span><p>TypeSafe says the name refers to economist William Stanley Jevons and the Jevons paradox: when a resource becomes dramatically more efficient, total demand can rise. Their bet is that much cheaper machine judgment will create many more places to use it.</p></div>
+      </section>
+
+      <section class="use-cases section-shell">
+        <div class="section-label">09 / Where it fits</div>
+        <div class="use-cases-heading"><h2>Good fit or<br /><em>wrong tool?</em></h2><p>The fastest way to understand Jev is to see where you should—and should not—use it.</p></div>
+        <div class="fit-grid">
+          <div class="fit-column good"><div class="fit-title"><span>✓</span><h3>Good Jev-shaped work</h3></div><ul><li><b>Support triage</b><span>topic, urgency, handoff</span></li><li><b>Agent guardrails</b><span>allow, block, or review a tool call</span></li><li><b>Security operations</b><span>risk, containment level, priority</span></li><li><b>Document workflows</b><span>classify, score, extract bounded fields</span></li><li><b>Model routing</b><span>choose which model or workflow runs next</span></li></ul></div>
+          <div class="fit-column bad"><div class="fit-title"><span>×</span><h3>Use something else</h3></div><ul><li><b>Write a customer reply</b><span>use a generative language model</span></li><li><b>Calculate invoice totals</b><span>use deterministic code</span></li><li><b>Plan an open-ended project</b><span>use a reasoning model or agent</span></li><li><b>Create an image or design</b><span>use a generative media model</span></li><li><b>Look up a known account balance</b><span>query the source database</span></li></ul></div>
+        </div>
+      </section>
+
+      <section class="limits section-shell" id="limits">
+        <div class="section-label">10 / The honest version</div>
+        <div class="limits-heading"><h2>Type-safe is not<br /><em>truth-safe.</em></h2><p>Jev narrows one class of failure. It does not make judgment, data, or workflow design infallible.</p></div>
+        <div class="limits-grid"><article><span>01</span><h3>It can be wrong</h3><p>A valid answer can still be the wrong answer. “Billing” is a legal choice even if the message was actually about account access.</p></article><article><span>02</span><h3>Inputs shape outcomes</h3><p>Missing, stale, biased, or adversarial state can produce a bad judgment with a perfectly valid type.</p></article><article><span>03</span><h3>Question design is engineering</h3><p>Vague questions, overlapping choices, and poor scales create unreliable workflows. Evaluation is still required.</p></article><article><span>04</span><h3>Vendor numbers need context</h3><p>Speed, cost, and accuracy claims depend on workload and methodology. Test Jev on your own data and failure costs.</p></article></div>
+        <div class="zero-note"><strong>“Zero hallucinations” needs a precise reading.</strong><p>TypeSafe uses the phrase for guaranteed schema matching: Jev cannot emit an output outside the declared type. That does not mean zero semantic mistakes. A type-valid decision can still be incorrect.</p></div>
+      </section>
+
+      <section class="faq section-shell">
+        <div class="section-label">11 / Quick answers</div>
+        <div class="faq-layout"><div><h2>Still wondering<br /><em>what it is?</em></h2><p>These are the distinctions that usually make the idea click.</p></div><div class="faq-list">
+          <details open><summary>Is Jev an LLM?</summary><p>TypeSafe presents Jev as a new “System One” model rather than a smaller chat LLM. Public material describes a different architecture, parallel sampling, and a training method called Reinforcement Learning for Calibrated Decisions. Its observable distinction is simpler: it returns typed probabilistic decisions instead of generated strings.</p></details>
+          <details><summary>Does Jev replace ChatGPT or Claude?</summary><p>No. Use a generative LLM when you need language, code, planning, or open-ended reasoning. Use Jev when software needs a bounded judgment. A workflow may use Jev to decide what should happen and an LLM to write the final message.</p></details>
+          <details><summary>Why not use normal if-statements?</summary><p>Keep exact facts in code. Jev is for conditions that are hard to enumerate, such as whether a message sounds like a cancellation threat or whether evidence supports a fraud concern.</p></details>
+          <details><summary>Why not use a traditional classifier?</summary><p>A classifier can be excellent for one stable task, but usually needs task-specific labeled data and retraining. Jev is positioned as a more general decision model that receives the question and output type at call time.</p></details>
+          <details><summary>Who decides the final action?</summary><p>Your application. Jev returns judgments and uncertainty. Code applies permissions, thresholds, business rules, logging, and human-review policies before an action occurs.</p></details>
+        </div></div>
+      </section>
+
+      <section class="sources section-shell"><div><span>Primary reading</span><h3>Go to the source.</h3></div><div><a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noreferrer">TypeSafe’s Jev announcement <span>↗</span></a><a href="https://evals.typesafe.ai/" target="_blank" rel="noreferrer">Published workflow evaluations <span>↗</span></a><a href="https://typesafe.ai/" target="_blank" rel="noreferrer">TypeSafe AI homepage <span>↗</span></a></div><p>Product claims on this page are attributed to TypeSafe’s public material. Conceptual examples are explanatory, not copied SDK contracts.</p></section>
+
+      <section class="closing section-shell"><div class="closing-kicker"><span class="pulse"></span> The takeaway</div><h2>Don’t make your code<br />read a <em>monologue.</em></h2><p>Give it a decision it can trust, inspect, and act on.</p><a class="button button-light" href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noreferrer">Read TypeSafe’s announcement <span>↗</span></a></section>
+    </main>
+
+    <footer class="footer section-shell"><a class="brand" href="#top"><span class="brand-mark"><span></span><span></span><span></span></span><span>Jev<span class="brand-dot">.</span>explained</span></a><p>An independent visual guide to a new AI primitive.</p><div><a href="#top">Back to top ↑</a><a href="https://typesafe.ai" target="_blank" rel="noreferrer">typesafe.ai ↗</a></div></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
